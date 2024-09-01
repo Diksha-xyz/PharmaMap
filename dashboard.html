@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Hospital Dashboard</h1>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('beds')">Beds</button>
+            <button class="tab-button" onclick="showTab('patients')">Patients</button>
+            <button class="tab-button" onclick="window.location.href='admit.html'">Admit Patient</button>
+            <button class="tab-button" onclick="showTab('opdQueue')">OPD Queue</button>
+            <button class="tab-button" onclick="window.location.href='login.html'">Patient Status</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="beds" class="tab-content active">
+            <h2>Available Beds</h2>
+            <div id="bedsContent">
+                <!-- Beds content will be dynamically filled by JavaScript -->
+            </div>
+        </div>
+
+        <div id="patients" class="tab-content">
+            <h2>Number of Patients</h2>
+            <div id="patientsContent">
+                <!-- Patients content will be dynamically filled by JavaScript -->
+            </div>
+        </div>
+
+        <div id="opdQueue" class="tab-content">
+            <h2>OPD Queue Status</h2>
+            <p id="opdQueueStatus">0</p>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
