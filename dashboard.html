@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Dashboard</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="admit.html"><i class="fas fa-user-plus"></i> Admit Patient</a></li>
+            <li><a href="login.html"><i class="fas fa-procedures"></i> Patient Status</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
+        <div class="head">
         <h1>Hospital Dashboard</h1>
-
-        <!-- Tabs Navigation -->
-        <div class="tabs">
-            <button class="tab-button active" onclick="showTab('beds')">Beds</button>
-            <button class="tab-button" onclick="showTab('patients')">Patients</button>
-            <button class="tab-button" onclick="window.location.href='admit.html'">Admit Patient</button>
-            <button class="tab-button" onclick="showTab('opdQueue')">OPD Queue</button>
-            <button class="tab-button" onclick="window.location.href='login.html'">Patient Status</button>
         </div>
-
-        <!-- Tab Content -->
-        <div id="beds" class="tab-content active">
-            <h2>Available Beds</h2>
-            <div id="bedsContent">
-                <!-- Beds content will be dynamically filled by JavaScript -->
+        <div class="dashboard-grid">
+            <div class="dashboard-box" id="beds">
+                <i class="fas fa-bed"></i>
+                <h2>Available Beds</h2>
+                <div id="bedsContent">
+                </div>
             </div>
-        </div>
 
-        <div id="patients" class="tab-content">
-            <h2>Number of Patients</h2>
-            <div id="patientsContent">
-                <!-- Patients content will be dynamically filled by JavaScript -->
+            <div class="dashboard-box" id="patients">
+                <i class="fas fa-users"></i>
+                <h2>Number of Patients</h2>
+                <div id="patientsContent">
+                </div>
             </div>
-        </div>
 
-        <div id="opdQueue" class="tab-content">
-            <h2>OPD Queue Status</h2>
-            <p id="opdQueueStatus">0</p>
+            <div class="dashboard-box" id="opdQueue">
+                <i class="fas fa-notes-medical"></i>
+                <h2>OPD Queue Status</h2>
+                <p id="opdQueueStatus">0</p>
+            </div>
         </div>
     </div>
     <script src="dashboard.js"></script>
 </body>
+
 </html>
